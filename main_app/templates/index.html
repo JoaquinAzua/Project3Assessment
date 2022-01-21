@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,12 +10,12 @@
     <title>Project 3 Assessment</title>
 </head>
 <body>
-    <h1>Wacky Widgets:</h1>
+    <h1>Wacky Widgets</h1>
     <hr>
     {% if widgets|length == 0 %}
         <h3>No Widgets yet</h3>
     {% else%}
-        <table>
+        <table class="pure-table pure-table-striped" style="margin: 2rem auto;  text-decoration: none;">
             <tr>
                 <th>Description</th>
                 <th>Quantity</th>
@@ -29,5 +30,7 @@
             {% endfor %}
         </table>
     {% endif %}
+    <hr>
+    <a class="pure-button" href="{% url 'add_widget' %}">Add Widgets</a>
 </body>
 </html>
